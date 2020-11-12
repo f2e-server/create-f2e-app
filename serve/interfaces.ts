@@ -26,3 +26,20 @@ export interface FetchResult<T = any> {
 export interface FetchApi<T = any, F = any> {
     (req?: RequestWith<T>, resp?: ServerResponse): Promise<FetchResult<F>>
 }
+
+export enum NoteStatus {
+    INIT, DOING, DONE, DELETE
+}
+export const NoteStatusMap = new Map([
+    [NoteStatus.INIT, '未开始'],
+    [NoteStatus.DOING, '进行中'],
+    [NoteStatus.DONE, '已完成'],
+])
+export interface Note {
+    id: number
+    title: string
+    desc?: string
+    createTime?: number
+    updateTime?: number
+    status?: NoteStatus
+}

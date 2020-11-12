@@ -6,6 +6,7 @@
         "module": "esnext",
         "jsx": "react",
         "jsxFactory": "React.createElement",
+        "jsxFragmentFactory": "React.Fragment",
         "sourceMap": true,
         "target": "esnext"
     },

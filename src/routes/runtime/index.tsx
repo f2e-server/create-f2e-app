@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Button, Col, Popconfirm, Radio, Row, Select, Tooltip } from 'antd';
 import { SimpleLines } from '../../components/Echarts'
 import * as apis from '../../apis/runtime'
 
@@ -8,7 +7,7 @@ interface State {
 }
 export default class extends React.Component<any, State> {
     state: State = {
-        mem_line: []
+        mem_line: Array(60).fill(0)
     }
 
     sse: EventSource
@@ -24,6 +23,10 @@ export default class extends React.Component<any, State> {
                 mem_line
             })
         })
+    }
+
+    componentWillUnmount() {
+        this.sse.close()
     }
 
     render () {

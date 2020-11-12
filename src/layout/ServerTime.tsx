@@ -13,7 +13,7 @@ export default () => {
         return () => {
             sse.close()
         }
-    })
+    }, [])
 
     return <span style={{}}>
         {moment(server_time).format('YYYY/MM/DD HH:mm:ss')}

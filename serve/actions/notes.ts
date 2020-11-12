@@ -1,24 +1,15 @@
-import { FetchApi } from '../interfaces'
+import { FetchApi, Note, NoteStatus } from '../interfaces'
 
-export enum NoteStatus {
-    INIT, DOING, DONE, DELETE
-}
-export const NoteStatusMap = new Map([
-    [NoteStatus.INIT, '未开始'],
-    [NoteStatus.DOING, '进行中'],
-    [NoteStatus.DONE, '已完成'],
-])
-export interface Note {
-    id: number
-    title: string
-    desc?: string
-    createTime?: number
-    updateTime?: number
-    status?: NoteStatus
-}
-
-let notes: Note[] = []
-let index = 0
+let notes: Note[] = [
+    {
+        id: 1,
+        title: '下班打卡',
+        desc: '这是一条测试TODO',
+        createTime: Date.now(),
+        updateTime: Date.now(),
+        status: NoteStatus.INIT,
+    }
+]
 
 export const list: FetchApi<never, Note[]> = async () => {
     return {
@@ -28,7 +19,7 @@ export const list: FetchApi<never, Note[]> = async () => {
 }
 export const add: FetchApi<Note, Note> = async (req) => {
     const note = req.body
-    note.id = ++index
+    note.id = notes.reduce((max, note) => Math.max(max, note.id), 0) + 1
     note.status = NoteStatus.INIT
     note.createTime = note.updateTime = Date.now()
     notes.push(note)
@@ -39,7 +30,7 @@ export const add: FetchApi<Note, Note> = async (req) => {
 }
 export const update: FetchApi<Partial<Note>, Note[]> = async (req) => {
     const note = req.body
-    const _note = notes.find(note => note.id === note.id)
+    const _note = notes.find(n => n.id === note.id)
     if (!_note) {
         return {
             success: false,
@@ -51,7 +42,7 @@ export const update: FetchApi<Partial<Note>, Note[]> = async (req) => {
         })
         return {
             success: true,
-            data: notes
+            data: notes.filter(note => note.status != NoteStatus.DELETE)
         }
     }
 }
