@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "outDir": "lib",
+        "moduleResolution": "node",
+        "module": "commonjs",
+        "target": "esnext"
+    },
+    "exclude": [
+        "node_modules/**",
+        "src/**"
+    ],
+    "include": [
+        "serve/**.ts"
+    ]
+}

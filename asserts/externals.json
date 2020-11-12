@@ -1,0 +1,8 @@
+{
+    "react": "React",
+    "react-dom": "ReactDOM",
+    "react-router": "ReactRouter",
+    "moment": "moment",
+    "antd": "antd",
+    "echarts": "echarts"
+}
