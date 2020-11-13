@@ -19,7 +19,6 @@
     "antd",
     "react",
     "SPA",
-    "SSR",
     "ServerSentEvent",
     "create-app"
   ],

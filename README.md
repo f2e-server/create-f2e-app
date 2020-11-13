@@ -9,8 +9,10 @@ npm run dev
 ```
 
 ## build
+```sh
 sh ./sh/build.sh
 scp ./output.tar.gz work@my-vps:~/apps
+```
 
 ## skills
 - react & antd
