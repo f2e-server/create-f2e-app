@@ -54,7 +54,7 @@ export default () => {
                 }},
             ]} dataSource={list}/>
         </Col>
-        <NoteModal visible={visible} onSubmit={(note) => {
+        <NoteModal visible={visible} onCancel={() => setVisible(false)} onSubmit={(note) => {
             apis.add(note).then(() => apis.list().then(updateList))
         }}/>
     </Row>
