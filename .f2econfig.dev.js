@@ -16,6 +16,13 @@ const config = {
         { middleware: 'esbuild' },
         // { middleware: 'webpack' },
         
+        {
+            middleware: 'proxy',
+            test: /^\/?raw/,
+            url: 'https://raw.githubusercontent.com',
+            pathname: '',
+        },
+
         require('./lib').default,
     ],
     // onServerCreate: (server) => {

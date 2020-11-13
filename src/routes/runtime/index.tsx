@@ -30,7 +30,7 @@ export default class extends React.Component<any, State> {
     }
 
     render () {
-        return <SimpleLines unit="%" series={new Map<string, number[]>([
+        return <SimpleLines unit="%" max={100} series={new Map<string, number[]>([
             ['内存趋势', this.state.mem_line]
         ])}/>
     }

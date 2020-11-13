@@ -1,0 +1,1 @@
+export const getRaw = (path: string) => fetch(`/raw/f2e-server/create-f2e-app/main/${path}`).then(res => res.text())

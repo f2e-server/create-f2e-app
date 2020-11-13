@@ -15,11 +15,10 @@ function resizeListener(e) {
 }
 
 export default function (element, fn) {
-    var window = this
     var document = window.document
     var isIE
 
-    var attachEvent = document.attachEvent
+    var attachEvent = document['attachEvent']
     if (typeof navigator !== 'undefined') {
         isIE = navigator.userAgent.match(/Trident/) ||
             navigator.userAgent.match(/Edge/)
@@ -49,7 +48,7 @@ export default function (element, fn) {
             // prevent <object> from stealing keyboard focus
             obj.setAttribute('tabindex', '-1');
 
-            obj.__resizeElement__ = element
+            obj['__resizeElement__'] = element
             obj.onload = objectLoad
             obj.type = 'text/html'
             if (isIE) {

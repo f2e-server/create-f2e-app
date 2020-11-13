@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Col, message, Popconfirm, Radio, Row, Select, Table, Tooltip } from 'antd';
+import { Button, Col, message, Popconfirm, Row, Table } from 'antd';
 import { FetchResult, Note, NoteStatus, NoteStatusMap } from '../../../serve/interfaces'
 import * as apis from '../../apis/notes'
 import NoteModal from './NoteModal'

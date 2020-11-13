@@ -1,8 +1,9 @@
 import * as React from 'react'
-import { DashboardOutlined, FormOutlined } from '@ant-design/icons'
+import { DashboardOutlined, FormOutlined, FileSearchOutlined } from '@ant-design/icons'
 import { history, dispatch } from './store'
 import Notes from './routes/notes'
 import Runtime from './routes/runtime'
+import Files from './routes/files'
 
 export interface MenuItem {
   key: string
@@ -22,6 +23,13 @@ export const menus : MenuItem[] = [
     icon: <FormOutlined />,
     href: '/notes',
     component: Notes,
+  },
+  {
+    key: '/files',
+    name: '文档展示',
+    icon: <FileSearchOutlined />,
+    href: '/files',
+    component: Files,
   },
   {
     key: '/runtime',
