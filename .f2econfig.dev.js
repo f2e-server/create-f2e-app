@@ -12,9 +12,8 @@ const config = {
     middlewares: [
         // 对应文本支持简单ejs语法的服务端渲染，通常用来给资源链接加时间戳
         { middleware: 'template', test: /\.html?/ },
-        // 编译构建前端资源可以使用 esbuild 或者 webpack, esbuild更快、webpack兼容性更好
+        // 编译构建前端资源可以使用 esbuild 
         { middleware: 'esbuild' },
-        // { middleware: 'webpack' },
         
         {
             middleware: 'proxy',

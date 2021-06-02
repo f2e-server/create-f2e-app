@@ -23,5 +23,5 @@ moment.__esModule = true;
 moment.locale('zh-cn');
 moment.default = moment;
 
-$include['../node_modules/antd/dist/antd.js'];
+$include['../node_modules/antd/dist/antd-with-locales.js'];
 $include['../node_modules/echarts/dist/echarts.js'];

@@ -3,7 +3,7 @@ import { Button, Col, message, Popconfirm, Row, Table } from 'antd';
 import { FetchResult, Note, NoteStatus, NoteStatusMap } from '../../../serve/interfaces'
 import * as apis from '../../apis/notes'
 import NoteModal from './NoteModal'
-import * as moment from 'moment';
+import moment from 'moment';
 
 const moment_show = (t: number) => moment(t).format('YYYY-MM-DD HH:mm:ss')
 export default () => {
